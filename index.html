@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
-        <script src="./script.js"></script>
-    </head>
-    <body>
-        <script>
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <script src="./script.js"></script>
+
+</head>
+<body>
+    <script>
+        // PSUEDOCODE
+        // ask user for their choice
+        // get a choice from computer
+            // input
+
+        // compare the choices to return a winner
+            // if computerChoice matches user choice
+                // return "it is a tie!"
+            // else if player wins
+                // return "You Won, userChoice beats computerChoice."
+            // else
+                // return "You lost, computerChoice beast userChioce."
+        // run playGame() to call playRound 5 times
             
-        </script>
-    </body>
+        // TESTS
+        console.log()
+        // getcomputerChoice function
+        function getComputerChoice() {
+            let computerChoiceNum = Math.floor(Math.random()*3)
+            if (computerChoiceNum === 0) {
+                return "Rock";
+            } else if (computerChoiceNum === 1) {
+                return "Paper";
+            } else if (computerChoiceNum === 2) {
+                return "Scissors";
+            }
+        }
+        // formatUserChoice
+        // playRound function  
+        // playGame function
+    </script>
+    
+</body>
 </html>
