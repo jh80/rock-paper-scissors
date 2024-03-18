@@ -24,7 +24,7 @@
         // run playGame() to call playRound 5 times
             
         // TESTS
-        console.log(playRound('Paper', getComputerChoice()));
+        console.log(playRound(' pool ', getComputerChoice()));
         // getcomputerChoice function
         function getComputerChoice() {
             let computerChoiceNum = Math.floor(Math.random()*3)
@@ -44,6 +44,8 @@
         }
         // playRound function  
         function  playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.trim();
+            playerSelection = onlyFirstUpper(playerSelection);
             if (playerSelection === computerSelection) {
                 return `It is a tie! You both chose ${computerSelection}.`;
             } else if (
@@ -51,18 +53,21 @@
                 playerSelection === 'Rock' && computerSelection === 'Scissors' ||
                 playerSelection === 'Scissors' && computerSelection === 'Paper'
                 ){
-                return `You won! ${playerSelection} beats ${computerSelection}`;
+                return `You won! ${playerSelection} beats ${computerSelection}.`;
             } else if (
                 computerSelection === 'Paper' && playerSelection === 'Rock' ||
                 computerSelection === 'Rock' && playerSelection === 'Scissors' ||
                 computerSelection === 'Scissors' && playerSelection === 'Paper'
                 ){
-                return `You lost. ${computerSelection} beats ${playerSelection}`
+                return `You lost. ${computerSelection} beats ${playerSelection}.`
             } else {
-                return `${playerSelection} isn't and option! You lose!`
+                return `${playerSelection} isn't an option! You lose!`
             }
         }
         // playGame function
+        function playGame() {
+
+        }
     </script>
     
 </body>
