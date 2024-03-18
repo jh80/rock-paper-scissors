@@ -10,6 +10,7 @@
     <script>
         // PSUEDOCODE
         // ask user for their choice
+            // use trim() to clear white space
         // get a choice from computer
             // input
 
@@ -23,7 +24,7 @@
         // run playGame() to call playRound 5 times
             
         // TESTS
-        console.log()
+        console.log(playRound('Paper', getComputerChoice()));
         // getcomputerChoice function
         function getComputerChoice() {
             let computerChoiceNum = Math.floor(Math.random()*3)
@@ -36,7 +37,31 @@
             }
         }
         // formatUserChoice
+        function onlyFirstUpper(string) {
+            let firstLetterUpper = string[0].toUpperCase();
+            let restOfStringLower = (string.slice(1, string.length)).toLowerCase();
+            return firstLetterUpper + restOfStringLower;
+        }
         // playRound function  
+        function  playRound(playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return `It is a tie! You both chose ${computerSelection}.`;
+            } else if (
+                playerSelection === 'Paper' && computerSelection === 'Rock' ||
+                playerSelection === 'Rock' && computerSelection === 'Scissors' ||
+                playerSelection === 'Scissors' && computerSelection === 'Paper'
+                ){
+                return `You won! ${playerSelection} beats ${computerSelection}`;
+            } else if (
+                computerSelection === 'Paper' && playerSelection === 'Rock' ||
+                computerSelection === 'Rock' && playerSelection === 'Scissors' ||
+                computerSelection === 'Scissors' && playerSelection === 'Paper'
+                ){
+                return `You lost. ${computerSelection} beats ${playerSelection}`
+            } else {
+                return `${playerSelection} isn't and option! You lose!`
+            }
+        }
         // playGame function
     </script>
     
