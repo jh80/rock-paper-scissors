@@ -24,7 +24,7 @@
         // run playGame() to call playRound 5 times
             
         // TESTS
-        console.log(playRound(' pool ', getComputerChoice()));
+        playGame();
         // getcomputerChoice function
         function getComputerChoice() {
             let computerChoiceNum = Math.floor(Math.random()*3)
@@ -66,7 +66,31 @@
         }
         // playGame function
         function playGame() {
-
+                        // declare variables
+                        let rounds = 5;
+            let playerScore = 0;
+            let computerScore = 0;
+            let ties = 0;
+            let playerSelection;
+            // start loop and keep score
+            for (let i = 0; i < rounds; i++) {
+                playerSelection = prompt("Rock, Paper, or Scissors?");
+                let won = playRound(playerSelection, getComputerChoice());
+                // display who won the round
+                console.log(won);
+                // adjust scores to account for winner
+                if (won.search(/won/i) >= 0) {
+                    playerScore++;
+                } else if (won.search(/lost/i) >= 0 || won.search(/lose/i) >= 0) {
+                    computerScore++;
+                } else {
+                    ties++;
+                }
+            }
+            // compare results
+            if (playerScore > computerScore) {
+                console.log(`You won the game ${playerScore} to ${computerScore} with ${ties} tie/s`)
+            }
         }
     </script>
     
