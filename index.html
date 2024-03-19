@@ -89,7 +89,11 @@
             }
             // compare results
             if (playerScore > computerScore) {
-                console.log(`You won the game ${playerScore} to ${computerScore} with ${ties} tie/s`)
+                console.log(`You won the game ${playerScore} to ${computerScore} with ${ties} tie/s`);
+            } else if (playerScore < computerScore){
+                console.log(`The computer won the game ${computerScore} to ${playerScore} with ${ties} tie/s`);
+            } else {
+                console.log(`It was a tie! ${playerScore} and ${computerScore} with ${ties} tie/s`)
             }
         }
     </script>
