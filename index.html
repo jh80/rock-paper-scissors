@@ -29,7 +29,11 @@
                 // return "You lost, computerChoice beast userChioce."
         // run playGame() to call playRound 5 times
             
-        // TESTS
+       // button refences
+       const rockBtn = document.querySelector('#rock');
+
+       //button event handlers
+       rockBtn.addEventListener('click', documentRound);
       
         // getcomputerChoice function
         function getComputerChoice() {
@@ -70,6 +74,14 @@
                 return `${playerSelection} isn't an option! You lose!`
             }
         }
+        function documentRound(event) {
+            let target = event.target;
+            if (target.id === 'rock') {
+                console.log(`Event registered as ${target.id}`)
+            }
+        }
+
+        /* DELETE THIS WHEN PARTS ARE DONE BEING USED
         // playGame function
         function playGame() {
                         // declare variables
@@ -102,6 +114,7 @@
                 console.log(`It was a tie! ${playerScore} and ${computerScore} with ${ties} tie/s`)
             }
         }
+        */
     </script>
     
 </body>
