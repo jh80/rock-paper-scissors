@@ -122,11 +122,11 @@
             if (playerScore === 5 || computerScore === 5) {
                 const winnerPara = document.createElement("p");
 
-                if (playerScore === 5) {
-                    winnerPara.textContent = `Player has won the game ${playerScore} to ${computerScore}`;
-                } else if (computerScore === 5) {
-                    winnerPara.textContent = `Computer has won the game ${computerScore} to ${playerScore}`;
-                }
+                winnerPara.textContent = 
+                    playerScore === 5 ? 
+                    `Player has won the game ${playerScore} to ${computerScore}` 
+                    : `Computer has won the game ${computerScore} to ${playerScore}`;
+                
 
                 scoresContainer.appendChild(winnerPara);
                 playerScore = 0;
