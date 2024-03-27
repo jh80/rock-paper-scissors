@@ -117,6 +117,22 @@
                 `${winner} won round ${round}. The score is player: ${playerScore} 
                 Computer: ${computerScore}.`;
             scoresContainer.appendChild(scoresPara);
+
+            // Check for game winner
+            if (playerScore === 5 || computerScore === 5) {
+                const winnerPara = document.createElement("p");
+
+                if (playerScore === 5) {
+                    winnerPara.textContent = `Player has won the game ${playerScore} to ${computerScore}`;
+                } else if (computerScore === 5) {
+                    winnerPara.textContent = `Computer has won the game ${computerScore} to ${playerScore}`;
+                }
+
+                scoresContainer.appendChild(winnerPara);
+                playerScore = 0;
+                computerScore = 0;
+                round = 0;
+            }
         }
 
         /* DELETE THIS WHEN PARTS ARE DONE BEING USED
