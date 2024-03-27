@@ -86,7 +86,21 @@
         function documentRound(event) {
             let target = event.target;
 
-            console.log(playRound(target.id, getComputerSelection()))
+            let winner = playRound(target.id, getComputerSelection());
+
+            switch (winner) {
+                case 'tie':
+                    console.log(winner);
+                    break;
+                case 'player':
+                    console.log(winner);
+                    break;
+                case 'computer': 
+                    console.log(winner);
+                    break;
+                case 'ERROR':
+                    break;
+            }
         }
 
         /* DELETE THIS WHEN PARTS ARE DONE BEING USED
