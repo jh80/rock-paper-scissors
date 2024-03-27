@@ -111,10 +111,12 @@
                 case 'ERROR':
                     break;
             }
-            scoresContainer.textContent += 
+            
+            const scoresPara = document.createElement("p");
+            scoresPara.textContent = 
                 `${winner} won round ${round}. The score is player: ${playerScore} 
                 Computer: ${computerScore}.`;
-
+            scoresContainer.appendChild(scoresPara);
         }
 
         /* DELETE THIS WHEN PARTS ARE DONE BEING USED
