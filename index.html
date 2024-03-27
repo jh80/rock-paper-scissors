@@ -91,7 +91,11 @@
         // function for button click of all options
         function documentRound(event) {
             let target = event.target;
-
+            if (round === 0) {
+                const gameContainer = document.createElement("div");
+                gameContainer.classList.add("gameContainer")
+                scoresContainer.appendChild(gameContainer);
+            }
             let winner = playRound(target.id, getComputerSelection());
             round++
             // add to winner's score
@@ -116,7 +120,7 @@
             scoresPara.textContent = 
                 `${winner} won round ${round}. The score is player: ${playerScore} 
                 Computer: ${computerScore}.`;
-            scoresContainer.appendChild(scoresPara);
+            scoresContainer.lastElementChild.appendChild(scoresPara);
 
             // Check for game winner
             if (playerScore === 5 || computerScore === 5) {
@@ -127,8 +131,7 @@
                     `Player has won the game ${playerScore} to ${computerScore}` 
                     : `Computer has won the game ${computerScore} to ${playerScore}`;
                 
-
-                scoresContainer.appendChild(winnerPara);
+                scoresContainer.lastElementChild.appendChild(winnerPara);
                 playerScore = 0;
                 computerScore = 0;
                 round = 0;
