@@ -33,12 +33,15 @@
             // else
                 // return "You lost, computerSelection beast userChioce."
         // run playGame() to call playRound 5 times
-            
-       // button refences
-       const btnContainer = document.querySelector('#btnContainer');
 
-       //button event handlers
-       btnContainer.addEventListener('click', documentRound);
+        let playerScore = 0;
+        let computerScore = 0;    
+
+        // button refences
+        const btnContainer = document.querySelector('#btnContainer');
+
+        //button event handlers
+        btnContainer.addEventListener('click', documentRound);
       
         // getcomputerSelection function
         function getComputerSelection () {
@@ -93,10 +96,13 @@
                     console.log(winner);
                     break;
                 case 'player':
+                    ++playerScore;
                     console.log(winner);
+                    console.log(`${winner} won, their score is now ${playerScore}`);
                     break;
                 case 'computer': 
-                    console.log(winner);
+                    ++computerScore;
+                    console.log(`${winner} won, their score is now ${computerScore}`);
                     break;
                 case 'ERROR':
                     break;
