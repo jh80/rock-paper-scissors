@@ -35,13 +35,18 @@
         // run playGame() to call playRound 5 times
 
         let playerScore = 0;
-        let computerScore = 0;    
+        let computerScore = 0;
+        let round = 0;
+
 
         // button refences
         const btnContainer = document.querySelector('#btnContainer');
 
-        //button event handlers
+        // button event handlers
         btnContainer.addEventListener('click', documentRound);
+
+        // make referenece for scoresContainer
+        const scoresContainer = document.querySelector('#scoresContainer');
       
         // getcomputerSelection function
         function getComputerSelection () {
@@ -83,14 +88,13 @@
             }
         }
 
-        // change
-
-        // tie function to button click of all options
+        // function for button click of all options
         function documentRound(event) {
             let target = event.target;
 
             let winner = playRound(target.id, getComputerSelection());
-
+            round++
+            // add to winner's score
             switch (winner) {
                 case 'tie':
                     console.log(winner);
@@ -107,6 +111,10 @@
                 case 'ERROR':
                     break;
             }
+            scoresContainer.textContent += 
+                `${winner} won round ${round}. The score is player: ${playerScore} 
+                Computer: ${computerScore}.`;
+
         }
 
         /* DELETE THIS WHEN PARTS ARE DONE BEING USED
