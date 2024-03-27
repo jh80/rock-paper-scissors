@@ -84,14 +84,17 @@
                 computerSelection === 'Scissors' && playerSelection === 'Paper'
                 ){
                 return 'computer';
-            } else {
+            } /*else {
                 return 'ERROR';
-            }
+            }*/
         }
 
         // function for button click of all options
         function documentRound(event) {
             let target = event.target;
+            if (target.id === 'btnContainer') {
+                return;
+            }
             if (round === 0) {
                 const gameContainer = document.createElement("div");
                 gameContainer.classList.add("gameContainer")
